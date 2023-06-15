@@ -1,7 +1,4 @@
-#includ<stdio.h>
-int main()
-{
-	char Mystr[] = "Programming is like building a multilingual puzzle,";
-	puts(Mystr);
-	return 0;
-}
+#includ <stdio.h>
+int main(void)
+       puts("Programming is like building a multilingual puzzle\n";
+	return (0);
