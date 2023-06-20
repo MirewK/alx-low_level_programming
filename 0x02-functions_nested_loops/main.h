@@ -1,6 +1,1 @@
-#ifndef _PUTCHAR
-#define _PUTCHAR
-
-void _putchar();
-
-#endif
+int _putchar(char c);

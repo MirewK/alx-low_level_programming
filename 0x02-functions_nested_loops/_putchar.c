@@ -1,15 +1,12 @@
-#include <stdio.h>
+#include <unistd.h>
 #include "main.h"
 
-void _putchar()
+/**
+ * _putchar - defines putchar
+ *
+ * return = always (success)
+ */
+int _putchar(char c)
 {
-	putchar('_');
-	putchar('p');
-	putchar('u');
-	putchar('t');
-	putchar('c');
-	putchar('h');
-	putchar('a');
-	putchar('r');
-	putchar('\n');
+	return (write(1, &c, 1));
 }
