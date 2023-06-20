@@ -2,7 +2,7 @@
 /**
  * _islower - appirance of lowercase letters
  *
- * Return: Always 0 (success)
+ * Return: 1 if c is lowercase, 0 otherwise
  */
 int _islower(int c)
 {
