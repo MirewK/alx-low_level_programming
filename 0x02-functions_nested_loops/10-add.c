@@ -1,8 +1,8 @@
 #include "main.h"
 /**
  * add -adds two integers
- * x: The first integer to be added.
- * y: The second integer to be added.
+ * x: x is  The first integer to be added.
+ * y: y is The second integer to be added.
  * Return: Always 0.
  *
  */
