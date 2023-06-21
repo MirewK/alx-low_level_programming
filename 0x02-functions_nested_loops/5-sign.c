@@ -1,9 +1,9 @@
 #include "main.h"
 /**
  * print_sign - print sign of a number
- * -1 and prints - if n is less than zero
+ * @n: the number to begin
+ * Return: -1 if success
  */
-
 int print_sign(int n)
 {
 	if (n > 0)
