@@ -3,7 +3,7 @@
 /**
  * _puts - prints the string
  *
- * @*str: is pointers starting point of the string
+ * @str: is pointers starting point of the string
  */
 
 void _puts(char *str)
