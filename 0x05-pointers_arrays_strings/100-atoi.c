@@ -2,7 +2,6 @@
 
 /**
  * _atoi - convert a string to an integer
- * 
  * @s: pointer of the string to be converted
  *
  * Return: integers
@@ -40,5 +39,5 @@ int _atoi(char *s)
 	}
 	_putchar('\n');
 
-	return (c);
+	return (ui);
 }
