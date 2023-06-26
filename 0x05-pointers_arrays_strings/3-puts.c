@@ -6,7 +6,7 @@
  * @*str: is pointers starting point of the string
  */
 
-void _puts(char *str);
+void _puts(char *str)
 {
 	while (*str != '\0')
 	{
