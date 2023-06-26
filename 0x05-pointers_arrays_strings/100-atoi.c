@@ -37,7 +37,7 @@ int _atoi(char *s)
 
 		/* _putchar(s[c]); */
 	}
-	_putchar('\n');
+	/* _putchar('\n'); */
 
 	return (ui);
 }
