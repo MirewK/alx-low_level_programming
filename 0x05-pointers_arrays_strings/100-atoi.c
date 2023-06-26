@@ -35,5 +35,7 @@ int _atoi(char *s)
 		}
 
 		c++;
+
+		_putchar(s[c]);
 	}
 }
