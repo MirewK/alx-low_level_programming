@@ -39,5 +39,5 @@ int _atoi(char *s)
 	}
 	/* _putchar('\n'); */
 
-	return ui;
+	return (ui);
 }
