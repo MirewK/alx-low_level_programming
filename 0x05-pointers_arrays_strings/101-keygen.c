@@ -4,13 +4,13 @@
 #include <time.h>
 
 /**
- * randompasswordgeneration - generates a rondom password
- * @N: length of the generated password
+ * generatepassword - generates a rondom password
+ * @len: length of the generated password
  *
  * Return - password
  */
 
-void 101-crackme(int len)
+void generatepassword(int len)
 {
 	char possiblechars[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()";
 	char password[len+1];
@@ -29,6 +29,6 @@ void 101-crackme(int len)
 int main()
 {
 	int len = 10;
-	101-crackme(len);
+	generatepassword(len);
 	return 0;
 }
