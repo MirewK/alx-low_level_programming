@@ -54,3 +54,10 @@ void randompasswordgeneration(int N)
 		}
 	}
 }
+
+int main()
+{
+	randompasswordgeneration(N);
+
+	return 0;
+}
