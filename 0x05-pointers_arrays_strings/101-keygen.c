@@ -1,38 +1,56 @@
-#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
 /**
- * generatepassword - generates a rondom password
- * @len: length of the generated password
+ * main - generates a rondom password
+ * program 101-crackme
  *
- * Return - password
+ * Return - Always 0
  */
 
-void generatepassword(int len)
+int main(void)
 {
-	int i;
-
-	len = 10;
-
-	char possiblechars[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()";
-	char password[len+1];
+	char password[84];
+	int index = 0, sum = 0, diff_half1, diff_half2;
 
 	srand(time(0));
-	for (i = 0; i < len; i++)
+
+	while (sum < 2772)
 	{
-		int randomindex = rand() % (sizeof(possiblechars) - 1);
-		password[i] = possiblechars[randomindex];
+		password[index] = 33 + rand() % 94;
+		sum += password[index++];
 	}
 
-	password[len] = '\0';
-	printf("Randomly generated password is: %s\n", password);
-}
+	password[index] = '\0';
 
-int main()
-{
-	int len = 10;
-	generatepassword(len);
-	return 0;
+	if (sum != 2772)
+	{
+		diff_half1 = (sum - 2772) / 2;
+		diff_half2 = (sum - 2772) / 2;
+		if ((sum - 2772) % 2 != 0)
+			diff_half1++;
+
+		for (index = 0; password[index]; index++)
+		{
+			if (password[index] >= (33 + diff_half1))
+			{
+				password[index] -= diff_half1;
+				break;
+			}
+		}
+
+		for (index = 0; password[index]; index++)
+		{
+			if (password[index] >= (33 + diff_half2))
+			{
+				password[index] -= diff_half2;
+				break;
+			}
+		}
+	}
+
+	printf("%s", password);
+
+	return (0);
 }
