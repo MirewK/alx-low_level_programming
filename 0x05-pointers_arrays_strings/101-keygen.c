@@ -20,7 +20,7 @@ void randompasswordgeneration(int N)
 	char LETTER[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char symbols[] = "!@#$^&*?";
 
-	char password[N];
+	int password[N];
 
 	srand((unsigned int)(time(NULL)));
 	
