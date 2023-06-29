@@ -6,19 +6,20 @@
  * @a: the array to be reversed
  * @n: number of the array
  *
- * return: reversed array
  */
 
 void reverse_array(int *a, int n);
 {
 	int a[];
-	int reverse[];
+	int reverse;
 	int i;
 
-	for (i = 0; i < n; i++)
+	for (i = 0; i < n/2; i++)
 	{
-		reverse[i] = a[n - i - 1];
+		reverse = a[i];
+		a[i] = a[n - i - 1];
+		a[n - i - 1] = reverse;
 	}
 
-	return reverse[i];
+	/* return reverse[i]; */
 }
