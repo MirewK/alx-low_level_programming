@@ -4,7 +4,7 @@
 #include <assert.h>
 /**
  * string_toupper - changes the lowercase to upper
- *
+ * @str: string to be checked
  * Return: uppercase
  */
 
