@@ -12,9 +12,8 @@
  * Return: pointer to the string dest
  */
 
-char *_strncat(char *dest, char *src, int n)
+char *_strncat(char *dest, char *src, size_t n)
 {
-	size_t n;
 
 	if ((dest == NULL) && (src == NULL))
 	{
