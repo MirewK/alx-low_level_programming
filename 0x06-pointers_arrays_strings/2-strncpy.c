@@ -15,9 +15,9 @@ char *_strncpy(char *dest, char *src, int n)
 {
 	char *start = dest;
 
-	if ((dest == NULL) && (src == NULL))
+	if (dest == 0 || src == 0)
 	{
-		return NULL;
+		return 0;
 	}
 
 	while (*src && n--)
