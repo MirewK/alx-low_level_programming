@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
 #include "main.h"
@@ -30,5 +29,5 @@ char *_strncat(char *dest, char *src, int n)
 	}
 	*s1 = '\0';
 
-	return dest;
+	return (dest);
 }
