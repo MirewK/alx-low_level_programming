@@ -12,7 +12,7 @@
  * Return: pointer to the string dest
  */
 
-char *_strncat(char *dest, char *src, size_t n)
+char *_strncat(char *dest, char *src, int n)
 {
 
 	if ((dest == NULL) && (src == NULL))
