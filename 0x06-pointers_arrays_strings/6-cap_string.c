@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -24,7 +25,8 @@ char *cap_string(char *s)
 			{
 				for (j = 0; j <= 12; j++)
 				{
-					if (s + i) -= 'a' - 'A';
+					if (s[j] == *(s + i -1))
+						*(s + i) -= 'a' - 'A';
 				}
 			}
 		}
