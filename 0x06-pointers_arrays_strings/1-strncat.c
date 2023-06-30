@@ -14,27 +14,25 @@
 
 char *_strncat(char *dest, char *src, int n)
 {
-	char *dest2;
-	*dest2 = dest;
 
 	if ((dest == NULL) && (src == NULL))
 	{
 		return NULL;
 	}
 
-	while (*dest2 != '\0')
+	while (*dest != '\0')
 	{
-		dest2++;
+		dest++;
 	}
 
 	while (n--)
 	{
-		if (!(*dest2++ = *src++))
+		if (!(*dest++ = *src++))
 		{
 			return dest;
 		}
 	}
-	*dest2 = '\0';
+	*dest = '\0';
 
 	return (dest);
 }
