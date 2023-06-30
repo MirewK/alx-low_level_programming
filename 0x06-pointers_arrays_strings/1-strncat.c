@@ -11,8 +11,7 @@
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	char *s1;
-	*s1 = dest;
+	char *s1 = dest;
 
 	if (dest == 0 || src == 0)
 	{
@@ -30,5 +29,6 @@ char *_strncat(char *dest, char *src, int n)
 		}
 	}
 	*s1 = '\0';
+
 	return (dest);
 }
