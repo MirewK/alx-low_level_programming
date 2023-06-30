@@ -14,19 +14,17 @@
 
 char *_strncpy(char *dest, char *src, int n)
 {
-	char *start = dest;
-
-	if ((dest == 0) && (src == 0))
+	int i;
+	i = 0;
+	while (i <n && *(src + i))
 	{
-		return 0;
+		*(des + i) = *(src + i);
+		i++;
 	}
-	while (n--)
+	while (i < n)
 	{
-		*dest = *src;
-		dest++;
-		src++;
+		*(dest + i) = '\0';
+		i++;
 	}
-	*dest = '\0';
-
-	return (start);
+	return (dest);
 }
