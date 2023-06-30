@@ -14,17 +14,27 @@
 
 char *_strncat(char *dest, char *src, int n)
 {
-	size_t i;
-	size_t j;
+	char destination[50];
+	char source[50];
 
-	while (dest[i] != '\0')
+	int i;
+	int j;
+
+	dest = destination;
+	src = source;
+	i = 0;
+	j = 0;
+
+	while (destination[i] != '\0')
 	{
+		++dest;
 		i++;
 	}
-	while (src[j] != '\0')
+	while (source[j] != '\0')
 	{
-		dest[i] = src[j];
-		i++;
+		*dest = *src;
+		src++;
+		dest++;
 		j++;
 	}
 	return dest;
