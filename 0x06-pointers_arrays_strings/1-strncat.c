@@ -20,19 +20,19 @@ char *_strncat(char *dest, char *src, int n)
 		return NULL;
 	}
 
-	while (*dest != '\0')
+	while (dest != '\0')
 	{
 		dest++;
 	}
 
 	while (n--)
 	{
-		if (!(*dest++ = *src++))
+		if (!(dest++ = src++))
 		{
 			return dest;
 		}
 	}
-	*dest = '\0';
+	dest = '\0';
 
 	return (dest);
 }
