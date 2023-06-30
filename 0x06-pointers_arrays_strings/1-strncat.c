@@ -14,25 +14,25 @@
 
 char *_strncat(char *dest, char *src, int n)
 {
+	size_t i;
+	int a;
+	size_t b;
 
-	if ((dest == NULL) && (src == NULL))
+	i = strlen (dest);
+	b = i;
+	a = 0;
+
+	if (dest == 0 || src == 0)
 	{
-		return NULL;
+		return 0;
 	}
 
-	while (*dest != '\0')
+	while (a < n && src[a] != '\0')
 	{
-		dest++;
+		dest[i++] = src[a++];
 	}
 
-	while (n--)
-	{
-		if (!(*dest++ = *src++))
-		{
-			return dest;
-		}
-	}
-	*dest = '\0';
+	dest[i] = '\0';
 
 	return (dest);
 }
