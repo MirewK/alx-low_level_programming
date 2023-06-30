@@ -2,7 +2,6 @@
 #include <string.h>
 #include <stdio.h>
 #include "main.h"
-
 /**
  * _strncat - function that concatenates two strings
  * @dest: destination string
@@ -11,7 +10,6 @@
  *
  * Return: pointer to the string dest
  */
-
 char *_strncat(char *dest, char *src, int n)
 {
 	char *s1 = dest;
