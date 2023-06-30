@@ -13,6 +13,8 @@
 
 char *_strncpy(char *dest, char *src, int n)
 {
+	char *start = dest;
+
 	if ((dest == NULL) && (src == NULL))
 	{
 		return NULL;
@@ -27,5 +29,5 @@ char *_strncpy(char *dest, char *src, int n)
 
 	*dest = '\0';
 
-	return (dest);
+	return (start);
 }
