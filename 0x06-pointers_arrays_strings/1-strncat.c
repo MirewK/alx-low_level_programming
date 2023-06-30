@@ -30,5 +30,5 @@ char *_strncat(char *dest, char *src, int n)
 	}
 	*s1 = '\0';
 
-	return (dest);
+	return dest;
 }
