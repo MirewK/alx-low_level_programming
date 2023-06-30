@@ -7,18 +7,25 @@
  * @a: the array to be reversed
  * @n: number of the array
  *
+ * Return: Always 0 (success)
  */
 
-void reverse_array(int *a, int n);
+void reverse_array(int *a, int n)
 {
-	int a[n];
-	int reverse[n];
-	int i;
+	int *p, i, aux, k;
 
-	for (i = 0; i < n; i++)
+	p = a;
+
+	for (i = 1; i < n; i++)
 	{
-		reverse[i] = a[n - i - 1];
+		p++;
 	}
 
-	/* return reverse[i]; */
+	for (k = 0; k < i / 2; k++)
+	{
+		aux = a[k];
+		a[k] = *p;
+		*p = aux;
+		p--;
+	}
 }
