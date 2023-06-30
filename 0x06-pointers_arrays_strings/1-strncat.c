@@ -14,28 +14,24 @@
 
 char *_strncat(char *dest, char *src, int n)
 {
-	char destination[50];
-	char source[50];
-
-	int i;
-	int j;
-
-	dest = destination;
-	src = source;
-	i = 0;
-	j = 0;
-
-	while (destination[i] != '\0')
+	if ((dest == NULL) && (src == NULL))
 	{
-		++dest;
-		i++;
+		return NULL;
 	}
-	while (source[j] != '\0')
+
+	while (*dest != '\0')
 	{
-		*dest = *src;
-		src++;
 		dest++;
-		j++;
 	}
-	return dest;
+
+	while (n--)
+	{
+		if (!(*dest++ = *src++))
+		{
+			return dest;
+		}
+	}
+	*dest = '\0';
+
+	return (dest);
 }
