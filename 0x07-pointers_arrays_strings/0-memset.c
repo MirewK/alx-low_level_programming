@@ -1,6 +1,4 @@
 #include "main.h"
-#include <string.h>
-
 /**
  * _memset - fills memory with a constant byte
  * @s: pointer that locates the memory space to be filled
