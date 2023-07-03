@@ -10,9 +10,9 @@
 
 char *_strchr(char *s, char c)
 {
-	size_t index = 0;
+	unsigned int index = 0;
 
-	while (*s != c && * != '\0')
+	while (*s != c)
 	{
 		s++;
 		index++;
