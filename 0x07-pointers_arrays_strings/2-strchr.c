@@ -12,7 +12,7 @@ char *_strchr(char *s, char c)
 {
 	size_t index = 0;
 
-	while (*s != c)
+	while (*(s +index) != c)
 	{
 		s++;
 		index++;
