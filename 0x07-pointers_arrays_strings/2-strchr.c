@@ -15,12 +15,13 @@ char *_strchr(char *s, char c)
 
 	while (*s != c)
 	{
-		++s;
-		++index;
+		s++;
+		index++;
 	}
 	if (*s == c)
 	{
-		return (s + index);
+		s = s + index;
+		return (s);
 	}
 	else
 	{
