@@ -20,7 +20,7 @@ char *_memset(char *s, char b, unsigned int n)
 
 	while(*s != '\0' && n--)
 	{
-		*p++ = b;
+		*s++ = b;
 	}
 
 	return (s);
