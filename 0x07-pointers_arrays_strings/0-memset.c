@@ -8,7 +8,7 @@
  * @index: pointers index
  * Return: Always 0 (success)
  */
-char *_memset(char *s, char b, size_t n)
+char *_memset(char *s, char b, unsigned int n)
 {
 	unsigned int index ;
 	
@@ -16,5 +16,5 @@ char *_memset(char *s, char b, size_t n)
 	{
 		s[index] = b ;
 	}
-	return(b);
+	return(s);
 }
