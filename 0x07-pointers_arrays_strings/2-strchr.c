@@ -20,10 +20,10 @@ char *_strchr(char *s, char c)
 	}
 	if (*s == c)
 	{
-		return s + index;
+		return (s + index);
 	}
 	else
 	{
-		return 0;
+		return (0);
 	}
 }
