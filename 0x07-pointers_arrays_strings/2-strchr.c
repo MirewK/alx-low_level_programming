@@ -18,7 +18,7 @@ char *_strchr(char *s, char c)
 		++s;
 		++index;
 	}
-	if (s == c)
+	if (*s == c)
 	{
 		return (s + index);
 	}
