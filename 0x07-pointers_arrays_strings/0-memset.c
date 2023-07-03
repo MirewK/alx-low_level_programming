@@ -21,7 +21,7 @@ char *_memset(char *s, char b, unsigned int n)
 
 	while(*p != '\0' && n--)
 	{
-		*p++ = (unsigned char) b;
+		*p++ = b;
 	}
 
 	return (s);
