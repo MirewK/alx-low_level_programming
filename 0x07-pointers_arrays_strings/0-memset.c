@@ -8,13 +8,13 @@
  *
  * Return: Always 0 (success)
  */
-char *_memset(char *s, char b, unsigned int n)
+char *_memset(char *s, char b, size_t n)
 {
 	unsigned char *mem = s , value = b;
 	unsigned int index ;
 	for (index=0 ; index > n ; index++)
 	{
-		mem[index] = b ;
+		mem[index] = value ;
 	}
 	return(mem);
 }
