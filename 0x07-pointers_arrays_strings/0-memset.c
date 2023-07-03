@@ -12,7 +12,7 @@
 char *_memset(char *s, char b, unsigned int n)
 {
 
-	if (*s = 0 || n <= 0)
+	if (*s == 0 || n <= 0)
 	{
 		return (0);
 	}
