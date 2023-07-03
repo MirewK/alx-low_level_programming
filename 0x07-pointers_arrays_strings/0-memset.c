@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * _memset - fills memory with a constant byte
- * @s: pointer that locates the memory space to be filled
+ * @*s: pointer that locates the memory space to be filled
  * @b: character to be filled
  * @n: numbers of characters
  *
@@ -23,5 +23,5 @@ char *_memset(char *s, char b, unsigned int n)
 		n--;
 	}
 
-	return (s);
+	return (*s);
 }
