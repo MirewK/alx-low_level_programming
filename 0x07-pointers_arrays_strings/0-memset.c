@@ -8,11 +8,15 @@
  *
  * Return: Always 0 (success)
  */
-
 char *_memset(char *s, char b, unsigned int n)
 {
-	int i;
-
-	for (i = 0; i < n; i++)
-		s[i] = b;
+	if (*s == 0 || n <= 0)
+		break;
+	while (*s != '\0' && n > 0)
+	{
+		*s = b;
+		s++;
+		n--;
+	}
+	return (s);
 }
