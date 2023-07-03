@@ -13,6 +13,8 @@ char *_memset(char *s, char b, size_t n)
 	unsigned int index ;
 	
 	for (index = 0 ; index < n ; index++)
+	{
 		s[index] = b ;
+	}
 	return(s);
 }
