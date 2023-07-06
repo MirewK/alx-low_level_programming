@@ -14,8 +14,11 @@ int _sqrt_recursion(int n)
 	if (n == (i * i))
 	{
 		return (i);
-		i++;
+	}
+	else if (i++)
+	{
 		_sqrt_recursion(n);
+	}
 	}
 	else
 	{
