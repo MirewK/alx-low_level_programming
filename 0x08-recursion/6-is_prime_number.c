@@ -13,6 +13,10 @@ int is_prime_number(int n)
 
 	i = n / 2;
 
+	if (n < 2)
+	{
+		return (0);
+	}
 	if (n % i == 0)
 	{
 		return (0);
