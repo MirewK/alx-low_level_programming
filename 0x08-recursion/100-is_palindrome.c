@@ -13,12 +13,12 @@ int is_palindrome(char *s)
 {
 	char *rev;
 
-	*rev = s;
-	if (*rev != '\0')
+	rev = s;
+	if (*s != '\0')
 	{
-		is_palindrome(rev + 1);
+		is_palindrome(s + 1);
 	}
-	if (s == rev)
+	if (rev == s)
 	{
 		return (1);
 	}
