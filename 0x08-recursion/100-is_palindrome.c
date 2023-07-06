@@ -11,7 +11,7 @@
 
 int is_palindrome(char *s)
 {
-	char *rev;
+	int *rev;
 
 	if (*s != '\0')
 	{
