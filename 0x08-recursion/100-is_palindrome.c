@@ -11,15 +11,18 @@
 
 int is_palindrome(char *s)
 {
+	char *rev;
+
 	if (*s != '\0')
 	{
-		if (s == (is_palindrome(s + 1)))
-		{
-			return (1);
-		}
-		else
-		{
-			return (0);
-		}
+		rev = is_palindrome(s + 1);
+	}
+	if (s == rev)
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
 	}
 }
