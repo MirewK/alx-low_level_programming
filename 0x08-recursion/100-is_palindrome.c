@@ -18,7 +18,7 @@ int _strlen_recursion(char *s)
 }
 
 /**
- * Comparator - compares the strings
+ * comparator - compares the strings
  * @s: the string
  * @n1: lowest
  * @n2: highest
