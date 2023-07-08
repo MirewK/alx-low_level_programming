@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-​
 /**
   * main - Prints the sum
   * @argc: count
@@ -30,11 +29,9 @@ int main(int argc, char *argv[])
 					return (1);
 				}
 			}
-
 			sum += atoi(e);
 			e++;
 		}
-
 		printf("%d\n", sum);
 	}
 	else
