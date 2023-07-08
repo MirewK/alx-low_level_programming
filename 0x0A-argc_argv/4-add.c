@@ -1,16 +1,15 @@
-#include"main.h"
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-
+#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+​
 /**
- * main - prints the sum
- * @argc: counter
- * @argv: vector
- *
- * Return: always 1 and passed 0
- */
-
+  * main - Prints the sum
+  * @argc: count
+  * @argv: vector
+  *
+  * Return: Always zero
+  */
 int main(int argc, char *argv[])
 {
 	int i;
@@ -31,14 +30,16 @@ int main(int argc, char *argv[])
 					return (1);
 				}
 			}
+
 			sum += atoi(e);
 			e++;
 		}
-		pritnf("%d\n", sum);
+
+		printf("%d\n", sum);
 	}
 	else
 	{
 		printf("0\n");
 	}
-	return (0);
+return (0);
 }
