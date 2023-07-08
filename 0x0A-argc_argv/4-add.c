@@ -8,7 +8,7 @@
  * @argc: counter
  * @argv: vector
  *
- * Return: always 0
+ * Return: always 1 and passed 0
  */
 
 int main(int argc, char *argv[])
