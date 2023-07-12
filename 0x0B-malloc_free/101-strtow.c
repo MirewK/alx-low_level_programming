@@ -51,6 +51,7 @@ int count_words(char *str)
 /**
  * strtow - splits a string to words
  * @str: the string
+ *
  * Return: always 
  */
 
