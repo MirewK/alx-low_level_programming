@@ -2,31 +2,31 @@
 #include <stdlib.h>
 
 /**
- * _calloc - allocates memory for an array
+ * _calloc - allocates memory for the array
  * @nmemb: the number of elements
  * @size: the size of the array
  *
- * Return: always 0
+ * Return: pointer to the array
  */
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *mem;
+	void *memory;
 	char *filler;
 	unsigned int index;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	mem = malloc(size * nmemb);
+	memory = malloc(size * nmemb);
 
-	if (mem == NULL)
+	if (memory == NULL)
 		return (NULL);
 
-	filler = mem;
+	filler = memory;
 
 	for (index = 0; index < (size * nmemb); index++)
 		filler[index] = '\0';
 
-	return (mem);
+	return (memory);
 }
