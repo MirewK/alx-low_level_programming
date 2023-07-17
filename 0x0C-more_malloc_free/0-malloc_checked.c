@@ -6,7 +6,7 @@
  * malloc_checked - allocates memory using malloc
  * @b: size of the memory allocated
  *
- * Return: on success pointer of the memory allocated and when fails 98
+ * Return: on succeter of the memory allocated and when fails 98
  */
 
 void *malloc_checked(unsigned int b)
