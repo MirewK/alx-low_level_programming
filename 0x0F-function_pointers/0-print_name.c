@@ -5,6 +5,7 @@
  * @name: name attribute
  * @f: pointer to the function
  *
+ * Return: nothing
  */
 
 void print_name(char *name, void (*f)(char *))
