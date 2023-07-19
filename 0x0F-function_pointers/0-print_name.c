@@ -4,6 +4,7 @@
  * print_name - prints the name
  * @name: name attribute
  * @f: pointer to the function
+ * @*: character
  *
  */
 
