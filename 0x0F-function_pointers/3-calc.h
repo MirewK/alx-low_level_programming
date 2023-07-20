@@ -1,5 +1,10 @@
+#ifndef _HEADER_
+#define _HEADER_
+
 #include <stdio.h>
 #include <stdlib.h>
+
+#endif
 /**
  * struct op - structure for operation
  * @op: the operator
