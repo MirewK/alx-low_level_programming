@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <unistd.h>
 /**
  * main - prints the operators code
  * @argc: number of arguments
