@@ -1,4 +1,5 @@
 #define _HEADER_
+
 /**
  * struct op - structure for operation
  * @op: the operator
