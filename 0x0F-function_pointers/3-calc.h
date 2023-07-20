@@ -1,5 +1,5 @@
-#define _HEADER_
-
+#include <stdio.h>
+#include <stdlib.h>
 /**
  * struct op - structure for operation
  * @op: the operator
@@ -10,7 +10,7 @@ typedef struct op
 {
 	char *op;
 	int (*f)(int a, int b);
-}op_t;
+} op_t;
 
 int op_add(int a, int b);
 int op_sub(int a, int b);
