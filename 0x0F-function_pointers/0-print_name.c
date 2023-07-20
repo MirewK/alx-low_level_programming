@@ -4,7 +4,7 @@
  * print_name - prints the name
  * @name: name attribute
  * @f: the pointer to the name
- *
+ * @*: ...
  */
 
 void print_name(char *name, void (*f)(char *))
