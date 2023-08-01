@@ -7,7 +7,7 @@
  * Return: always success 
  */
 
-size_t pritn_listint(const listint_t *h)
+size_t print_listint(const listint_t *h)
 {
 	unsigned int temp = 0;
 
