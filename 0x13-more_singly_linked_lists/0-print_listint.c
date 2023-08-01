@@ -1,12 +1,10 @@
 #include "lists.h"
-
 /**
  * print_listint - prints a list of integers
  * @h: pointer that points the structure
  *
  * Return: always success 
  */
-
 size_t print_listint(const listint_t *h)
 {
 	unsigned int temp = 0;
