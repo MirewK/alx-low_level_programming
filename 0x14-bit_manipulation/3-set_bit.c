@@ -10,11 +10,5 @@
 
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long int *num;
-
-	*num = &n;
-	for (index = 0; index < 32; index++)
-	{
-		*num = 1;
-	}
+	return (n | (1 << index));
 }
