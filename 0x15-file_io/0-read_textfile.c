@@ -14,9 +14,8 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	FILE *fp;
-	char buf[letters];
-	size_t nread = 0;
-	char c;
+	char buf[4096];
+	size_t nread;
 
 	if (filename == NULL)
 		return (0);
@@ -25,11 +24,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (fp == NULL)
 		return (0);
 
-	while ((c = fgetc(fp)) != EOF && nread < letters)
-	{
-		buf[nread++] = c;
-	}
-
+	nread = fread(buf, 1, letters, fp);
 	fclose(fp);
 
 	if (nread == 0)
