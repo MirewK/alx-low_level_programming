@@ -2,8 +2,20 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 #include <elf.h>
 
+void elf_check(unsigned char *e_indent);
+void magic_print(unsigned char *e_indent);
+void class_print(unsigned char *e_indent);
+void data_print(unsigned char *e_indent);
+void version_print(unsigned char *e_indent);
+void abi_print(unsigned char *e_indent);
+void osabi_print(unsigned char *e_indent);
+void type_print(unsigned int type_e, unsigned char *e_indent);
+void entry_print(unsigned long int entry_e, unsigned char *e_indent);
+void elf_close(int elf);
 /**
  * main  - print elf header
  * @argc: first argument
