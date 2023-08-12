@@ -290,7 +290,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	header = malloc(sizeof(Elf64_Ehdr));
 	if (header == NULL)
 	{
-		close_elf(i);
+		elf_close(i);
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 		exit(98);
 	}
@@ -300,7 +300,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	if (j == -1)
 	{
 		free(header);
-		close_elf(i);
+		elf_close(i);
 		dprintf(STDERR_FILENO, "Error: '%s': Nosuch file\n", argv[1]);
 		exit(98);
 	}
