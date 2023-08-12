@@ -6,36 +6,36 @@
 #include <sys/stat.h>
 #include <elf.h>
 
-void elf_check(unsigned char *e_indent);
-void magic_print(unsigned char *e_indent);
-void class_print(unsigned char *e_indent);
-void data_print(unsigned char *e_indent);
-void version_print(unsigned char *e_indent);
-void abi_print(unsigned char *e_indent);
-void osabi_print(unsigned char *e_indent);
-void type_print(unsigned int type_e, unsigned char *e_indent);
-void entry_print(unsigned long int entry_e, unsigned char *e_indent);
+void elf_check(unsigned char *e_ident);
+void magic_print(unsigned char *e_ident);
+void class_print(unsigned char *e_ident);
+void data_print(unsigned char *e_ident);
+void version_print(unsigned char *e_ident);
+void abi_print(unsigned char *e_ident);
+void osabi_print(unsigned char *e_ident);
+void type_print(unsigned int type_e, unsigned char *e_ident);
+void entry_print(unsigned long int entry_e, unsigned char *e_ident);
 void elf_close(int elf);
 
 /**
  * elf_check - checks if a file is an ELF file or not
- * @e_indent: pointer to the ELF file
+ * @e_ident: pointer to the ELF file
  *
  * Description: 98 if not ELF file
  */
 
-void elf_check(unsigned char *e_indent)
+void elf_check(unsigned char *e_ident)
 {
 	int i;
 
 	for (i = 0; i < 4; i++)
 	{
-		if (e_indent[i] != 127 &&
-				e_indent[i] != 'E' &&
-				e_indent[i] != 'L' &&
-				e_indent[i] != 'F')
+		if (e_ident[i] != 127 &&
+				e_ident[i] != 'E' &&
+				e_ident[i] != 'L' &&
+				e_ident[i] != 'F')
 		{
-			dprintf(STDERR_FILENO, "Errir: Not an ELF file\n");
+			dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
 			exit(98);
 		}
 	}
@@ -43,11 +43,11 @@ void elf_check(unsigned char *e_indent)
 
 /**
  * magic_print - prints magic numbers
- * @e_indent: pointer to the magic number
+ * @e_ident: pointer to the magic number
  *
- * Description: mumbers
+ * Description: numbers
  */
-void magic_print(unsigned char *e_indent)
+void magic_print(unsigned char *e_ident)
 {
 	int i;
 
@@ -66,15 +66,15 @@ void magic_print(unsigned char *e_indent)
 
 /**
  * class_print - prints class of ELF
- * @e_indent: pointer to the ELF
+ * @e_ident: pointer to the ELF
  *
  * Description: class
  */
-void class_print(unsigned char *e_indent)
+void class_print(unsigned char *e_ident)
 {
 	printf(" Class:       ");
 
-	switch (e_indent[EI_CLASS])
+	switch (e_ident[EI_CLASS])
 	{
 		case ELFCLASSNONE:
 			printf("none\n");
@@ -92,15 +92,15 @@ void class_print(unsigned char *e_indent)
 
 /**
  * data_print - print ELF data
- * @e_indent: pointer to ELF
+ * @e_ident: pointer to ELF
  *
  * Description: data
  */
-void data_print(unsigned char *e_indent)
+void data_print(unsigned char *e_ident)
 {
 	printf("  Data:       ");
 
-	switch (e_indent[EI_DATA])
+	switch (e_ident[EI_DATA])
 	{
 		case ELFDATANONE:
 			printf("none\n");
@@ -118,15 +118,15 @@ void data_print(unsigned char *e_indent)
 
 /**
  * version_print - prints the version
- * @e_indent: pointer to the ELF
+ * @e_ident: pointer to the ELF
  *
  * Description: version
  */
-void version_print(unsigned char *e_indent)
+void version_print(unsigned char *e_ident)
 {
-	printf("  Version:       %d", e_indent[EI_VERSION]);
+	printf("  Version:       %d", e_ident[EI_VERSION]);
 
-	switch (e_indent[EI_VERSION])
+	switch (e_ident[EI_VERSION])
 	{
 		case EV_CURRENT:
 			printf(" (current)\n");
@@ -139,15 +139,15 @@ void version_print(unsigned char *e_indent)
 
 /**
  * osabi_print - print OS/ABI
- * @e_indent: pointer to ELF
+ * @e_ident: pointer to ELF
  *
  * Description: OS/ABI
  */
-void osabi_pritn(unsigned char *e_indent)
+void osabi_pritn(unsigned char *e_ident)
 {
 	printf("  OS/ABI:      ");
 
-	switch (e_indent[EI_OSABI])
+	switch (e_ident[EI_OSABI])
 	{
 		case ELFOSABI_NONE:
 			printf("UNIX - System V\n");
@@ -180,31 +180,31 @@ void osabi_pritn(unsigned char *e_indent)
 			printf("Standalone App\n");
 			break;
 		default:
-			printf("<unknown: %x>\n", e_indent[EI_OSABI]);
+			printf("<unknown: %x>\n", e_ident[EI_OSABI]);
 	}
 }
 
 /**
  * abi_print - print ABI version
- * @e_indent: pointer to ELF
+ * @e_ident: pointer to ELF
  *
  * Description: ABI version
  */
-void abi_print(unsigned char *e_indent)
+void abi_print(unsigned char *e_ident)
 {
-	printf("  ABI Version:     %d\n", e_indent[EI_ABIVERSION]);
+	printf("  ABI Version:     %d\n", e_ident[EI_ABIVERSION]);
 }
 
 /**
  * type_print - print the type of ELF
  * @type_e: ELF type
- * @e_indent: pointer to ELF
+ * @e_ident: pointer to ELF
  *
  * Description: type
  */
-void type_print(unsigned int type_e, unsigned char *e_indent)
+void type_print(unsigned int type_e, unsigned char *e_ident)
 {
-	if (e_indent[EI_DATA] == ELFDATA2MSB)
+	if (e_ident[EI_DATA] == ELFDATA2MSB)
 		type_e >>= 8;
 
 	printf("  Type:      ");
@@ -234,21 +234,21 @@ void type_print(unsigned int type_e, unsigned char *e_indent)
 /**
  * entry_print - print entry point
  * @entry_e: address of ELF
- * @e_indent: pointer to ELF
+ * @e_ident: pointer to ELF
  *
  * Description: print entry
  */
-void entry_print(unsigned long int entry_e, unsigned char *e_indent)
+void entry_print(unsigned long int entry_e, unsigned char *e_ident)
 {
 	printf("  Entry point address:        ");
 
-	if (e_indent[EI_DATA] == ELFDATA2MSB)
+	if (e_ident[EI_DATA] == ELFDATA2MSB)
 	{
 		entry_e = ((entry_e << 8) & 0xFF00FF00) | ((entry_e >> 8) & 0xFF00FF);
 		entry_e = (entry_e << 16) | (entry_e >> 16);
 	}
 
-	if (e_indent[EI_CLASS] == ELFCLASS32)
+	if (e_ident[EI_CLASS] == ELFCLASS32)
 		printf("%#x\n", (unsigned int)entry_e);
 	else
 		printf("%#lx\n", entry_e);
